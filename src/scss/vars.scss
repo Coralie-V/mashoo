@@ -26,7 +26,7 @@ $screen-breakpoints : (
 
         @if ($extra) {
 
-            @media screen and (min-width: map-get($screen-breakpoints, $breakpoint-name)) and c ' #{$extra} {
+            @media screen and (min-width: map-get($screen-breakpoints, $breakpoint-name)) and #{$extra} {
                 @content;
             }
 
@@ -35,7 +35,7 @@ $screen-breakpoints : (
             @media screen and (min-width: map-get($screen-breakpoints, $breakpoint-name)) {
                 @content;
             }
-        }........
+        }
     }
 }
 

@@ -9,7 +9,7 @@ module.exports = {
                 additionalData: `
                     @import "@/scss/vars.scss";
                     @import "@/scss/style.scss";
-                    `,
+                    `
             }
         }
     }
