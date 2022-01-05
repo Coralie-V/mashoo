@@ -9,6 +9,8 @@ module.exports = {
                 additionalData: `
                     @import "@/scss/vars.scss";
                     @import "@/scss/style.scss";
+                    @import "@/scss/footer.scss";
+                    @import "@/scss/reset.scss";
                     `,
             }
         }
