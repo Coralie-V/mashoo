@@ -10,8 +10,6 @@
   </div>
   
 </template>
-<script>
-import Footer from "@/components/Footer.vue"
 
 <script>
 import Footer from "./components/Footer";
