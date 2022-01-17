@@ -47,7 +47,7 @@
         </div>
         <div class="formulaire__liens">
           <a href="#">Mot de passe oublié ?</a>
-          <a href="inscription.html"
+          <a href="inscription"
             >Vous n'êtes pas encore inscrit ? Inscrivez-vous !</a
           >
         </div>
@@ -73,7 +73,6 @@
     </button>
   </section>
 </template>
-
 <script>
 import axios from "axios";
 export default {
