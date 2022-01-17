@@ -1,0 +1,72 @@
+// Desktop
+//Pour mettre un bouton avec une border en dégradé :
+// <button class="input-nav"><span>Texte</span></button>
+
+.button__form {
+  font-size: $fontSizeNav;
+  font-weight: bold;
+  transition: 0.3s;
+  @include btn;
+}
+
+.linkInpiration {
+  margin: auto;
+  display: block;
+  text-align: center;
+  .button__form-a {
+    color: $noir;
+    padding: 10px 25px;
+    border: 2px solid $degradeVioletBleu;
+  }
+}
+
+.button_bleuFonce {
+  background-color: $bleuFonce;
+  border-radius: 100px;
+  padding: 12px 40px;
+  border: 0px;
+  color: $blanc;
+  transition: 0.3s;
+  &:hover {
+    background-color: $bleuFonceHover;
+  }
+}
+
+.button__form::after {
+  @include btnAfter;
+}
+
+.-orange {
+  font-size: $fontSizeNav;
+  font-weight: bold;
+  @include btnOrange;
+  span {
+    display: flex;
+    img {
+      margin-right: 1em;
+    }
+  }
+
+  &::after {
+    @include btnAfterOrange;
+  }
+  margin-bottom: 2em;
+}
+
+.button__form.-decouvrir {
+  background: $violet;
+  padding: 1px;
+  span {
+    background: $violet;
+    color: $blanc;
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      background-color: $violetfonce;
+    }
+  }
+}
+.-centrer {
+  margin: 3em auto 1em !important;
+  display: block;
+}

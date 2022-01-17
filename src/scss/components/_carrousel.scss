@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+
+// la variable dit y'a combien de slides dans le slider
+$nb-slides: 5;
+
+.line {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  @extend .flex;
+  align-items: center; // horizontal
+  justify-content: center; // vertical
+}
+
+.carousel-wrapper {
+  @extend .flex;
+  position: relative;
+  max-width: 600px;
+  margin: 50px;
+
+  input {
+    display: none;
+  }
+}
+
+.carousel {
+  @extend .line;
+  overflow: hidden;
+  border-radius: 15px;
+
+  ul {
+    @extend .center;
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100% * $nb-slides;
+
+    transition: left 0.8s cubic-bezier(0.57, 0.01, 0.46, 0.96);
+  }
+
+  li {
+    @extend .line;
+
+    img {
+      @extend .line;
+      border-radius: 15px;
+    }
+  }
+}
+
+// les fleches
+%arrow {
+  $arrow-size: 50px;
+  display: none;
+  position: absolute;
+
+  cursor: pointer;
+  font-weight: bolder;
+  text-shadow: 0 0 7.5px rgba($color: black, $alpha: 0.7);
+
+  top: 50%;
+  z-index: 1;
+  opacity: 0.7;
+
+  height: $arrow-size;
+  font-size: $arrow-size;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.left-arrow {
+  @extend %arrow;
+  left: 15px;
+}
+
+.right-arrow {
+  @extend %arrow;
+  right: 15px;
+}
+
+// boucle for du carousel
+@for $n from 1 through $nb-slides {
+  #slide#{$n}:checked {
+    // à droite
+    & ~ .carousel ul {
+      left: -100% * ($n - 1);
+    }
+  }
+}
+
+@function custom-modulo($n) {
+  @return 1 + ($nb-slides + (($n - 1) % $nb-slides)) % $nb-slides;
+}
+
+@for $n from 1 through $nb-slides {
+  #slide#{$n}:checked {
+    & ~ .left-arrow[for="slide#{custom-modulo($n - 1)}"],
+    & ~ .right-arrow[for="slide#{custom-modulo($n + 1)}"] {
+      display: block;
+    }
+  }
+}

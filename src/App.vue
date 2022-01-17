@@ -1,32 +1,37 @@
+<style lang="scss">
+@import "@/scss/vars.scss";
+@import "@/scss/main.scss";
+</style>
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <my-nav></my-nav>
+    <router-view />
+    <my-footer></my-footer>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import axios from "axios";
 
-#nav {
-  padding: 30px;
+export default {
+  name: "app",
+  components: {
+    myFooter: Footer,
+    myNav: Nav,
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  created() {
+    axios
+      .get("http://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
+      .then((response) => {
+        let champAcf = (this.pageData = response.data.acf);
+        console.log("le background url de la page d'accueil " + champAcf.logo);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+};
+</script>
