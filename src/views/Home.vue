@@ -2,6 +2,7 @@
   <div class="Accueil">
     <header
       v-bind:style="{ backgroundImage: 'url(' + background.acf.banner + ')' }"
+      v-if="background"
     >
       <div class="banner">
         <div class="header_chapo">
@@ -165,6 +166,8 @@ export default {
   },
   name: "Home",
   mounted() {
+    console.log("LOG BACKGROUND INIT", this.background);
+
     axios
       .get("http://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
       .then((reponse) => {

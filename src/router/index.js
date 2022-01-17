@@ -11,8 +11,8 @@ const routes = [
     component: Home,
   },
   {
-    path: "/Personnalisation",
-    name: "Personnalisation",
+    path: "/personnalisation",
+    name: "personnalisation",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -20,7 +20,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Personnalisation.vue"),
   },
   {
-    path: "/Inspirations",
+    path: "/inspirations",
     name: "Inspirations",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -29,7 +29,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Inspirations.vue"),
   },
   {
-    path: "/Connexion",
+    path: "/connexion",
     name: "Connexion",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -38,7 +38,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Connexion.vue"),
   },
   {
-    path: "/Contact",
+    path: "/contact",
     name: "Contact",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -47,13 +47,13 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Contact.vue"),
   },
   {
-    path: "/Inscription",
-    name: "Inscription",
+    path: "/inscription",
+    name: "inscription",
 
     component: () => import("../views/Inscription.vue"),
   },
   {
-    path: "/Profil",
+    path: "/profil",
     name: "Profil",
 
     component: () => import("../views/Profil.vue"),

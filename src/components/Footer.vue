@@ -7,14 +7,14 @@
           <li class="footer__list"><a href="#"> CGU/CGV </a></li>
           <li class="footer__list"><a href="#"> Mentions légales </a></li>
           <li class="footer__list">
-            <router-link to="/Contact">Contact</router-link>
+            <router-link to="/contact">Contact</router-link>
           </li>
           <li class="footer__list">
-            <router-link to="/Inscription">S'inscrire</router-link>
+            <router-link to="/inscription">S'inscrire</router-link>
           </li>
         </ul>
 
-        <ul class="footer__group -reseau">
+        <!-- <ul class="footer__group -reseau">
           <li
             :key="logoFooter.acf.social_media.le_reseaux_social"
             v-for="logoFooter in logosFooter"
@@ -28,7 +28,7 @@
               />
             </a>
           </li>
-        </ul>
+        </ul> -->
 
         <ul style="padding-bottom: 2%" class="footer__group">
           <li class="footer__list">
@@ -63,7 +63,7 @@ export default {
       logoFooter: null,
     };
   },
-  name: "Home",
+  name: "Footer",
   mounted() {
     axios
       .get("http://mashoo.paulakar.fr/wp-json/acf/v3/options/Infos/acf")

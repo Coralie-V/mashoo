@@ -3,4 +3,15 @@ module.exports = {
     host: "0.0.0.0",
     https: false,
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @import "@/scss/vars.scss";
+          @import "@/scss/main.scss";
+
+        `,
+      },
+    },
+  },
 };

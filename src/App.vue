@@ -2,6 +2,7 @@
 @import "@/scss/vars.scss";
 @import "@/scss/main.scss";
 </style>
+
 <template>
   <div id="app">
     <my-nav></my-nav>

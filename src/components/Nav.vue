@@ -14,13 +14,13 @@
           <router-link to="/">Accueil</router-link>
         </li>
         <li class="nav__list">
-          <router-link to="/Personnalisation">Personnalisation</router-link>
+          <router-link to="/personnalisation">Personnalisation</router-link>
         </li>
         <li class="nav__list">
-          <router-link to="/Inspirations">Inspirations</router-link>
+          <router-link to="/inspirations">Inspirations</router-link>
         </li>
         <li class="nav__list --login">
-          <router-link id="--login" to="/Connexion">Connexion</router-link>
+          <router-link id="--login" to="/connexion">Connexion</router-link>
         </li>
       </ul>
     </nav>

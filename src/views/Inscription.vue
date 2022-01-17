@@ -5,39 +5,23 @@
       <h1 id="titre_h1">Inscription</h1>
       <div class="trait_titre_h1"></div>
     </div>
-    <form>
+    <form @submit="submit">
       <div class="formulaire">
-        <label class="formulaire__label" for="prenom">Prénom</label>
-        <span class="formulaire__input"
-          ><input type="text" name="prenom"
-        /></span>
-        <label class="formulaire__label" for="nom">Nom</label>
-        <span class="formulaire__input"><input type="text" name="nom" /></span>
         <label class="formulaire__label" for="email">Email</label>
         <span class="formulaire__input"
-          ><input type="email" name="email"
+          ><input type="email" name="email" v-model="form.email"
         /></span>
-        <label class="formulaire__label" for="naissance"
-          >Date de naissance</label
-        >
-        <span class="formulaire__input"
-          ><input type="text" name="naissance"
-        /></span>
+
         <label class="formulaire__label" for="username"
           >Nom d'utilisateur</label
         >
         <span class="formulaire__input"
-          ><input type="text" name="username"
+          ><input type="text" name="username" v-model="form.username"
         /></span>
         <label class="formulaire__label" for="mdp">Mot de passe</label>
+
         <span class="formulaire__input"
-          ><input type="password" name="mot de passe"
-        /></span>
-        <label class="formulaire__label" for="ConfirmMdp"
-          >Confirmation du mot de passe</label
-        >
-        <span class="formulaire__input"
-          ><input type="password" name="ConfirmMdp"
+          ><input type="password" name="ConfirmMdp" v-model="form.password"
         /></span>
 
         <div class="formulaire__newsletter">
@@ -70,7 +54,58 @@
           d’utilisation ainsi que les politiques de confidentialités
         </label>
       </div>
+      <button class="button__form -centrer" type="submit">S'inscrire</button>
     </form>
-    <button class="button__form -centrer"><span>S'inscrire</span></button>
+
+    <div v-if="success">
+      <p style="color: green">Votre inscription est réussi !</p>
+    </div>
+
+    <div v-if="error">
+      <p style="color: red">{{ errorMessage }}</p>
+    </div>
   </section>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      form: {
+        username: null,
+        email: null,
+        password: null,
+      },
+      success: false,
+      error: false,
+      errorMessage: null,
+    };
+  },
+  methods: {
+    submit(event) {
+      event.preventDefault();
+
+      axios
+        .post("http://mashoo.paulakar.fr/wp-json/wp/v2/users/register", {
+          username: this.form.username,
+          email: this.form.email,
+          password: this.form.password,
+        })
+        .then((response) => {
+          console.log(response);
+          if (response.status === 200) {
+            this.success = true;
+            this.error = false;
+          }
+        })
+        .catch((error) => {
+          console.log("Error LOG : ", error.response);
+          this.errorMessage = error.response.data.message;
+          this.error = true;
+          this.success = false;
+        });
+    },
+  },
+};
+</script>
