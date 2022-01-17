@@ -14,39 +14,28 @@
           </li>
         </ul>
 
-        <!-- <ul class="footer__group -reseau">
+        <ul class="footer__group -reseau">
           <li
-            :key="logoFooter.acf.social_media.le_reseaux_social"
             v-for="logoFooter in logosFooter"
+            :key="logoFooter"
             style="padding-left: 0"
             class="footer__list -reseau"
           >
             <a href="#">
-              <img
-                :src="logoFooter.acf.social_media.le_reseaux_social"
-                alt="instagram"
-              />
+              <img :src="logoFooter.le_reseaux_social" alt="#" />
             </a>
           </li>
-        </ul> -->
+        </ul>
 
         <ul style="padding-bottom: 2%" class="footer__group">
-          <li class="footer__list">
-            <a href="#"> <img src="images/american.png" alt="american" /> </a>
-          </li>
-          <li class="footer__list">
-            <a href="#"> <img src="images/applepay.png" alt="applepay" /> </a>
-          </li>
-          <li class="footer__list">
+          <li
+            v-for="logoFooterPayement in logosFooterPayement"
+            :key="logoFooterPayement"
+            class="footer__list"
+          >
             <a href="#">
-              <img src="images/mastercard.png" alt="mastercard" />
+              <img :src="logoFooterPayement.le_moyen_de_payement.url" alt="#" />
             </a>
-          </li>
-          <li class="footer__list">
-            <a href="#"> <img src="images/visa.png" alt="visa" /> </a>
-          </li>
-          <li class="footer__list">
-            <a href="#"> <img src="images/paypal.png" alt="paypal" /> </a>
           </li>
         </ul>
       </nav>
@@ -60,16 +49,17 @@ import axios from "axios";
 export default {
   data() {
     return {
-      logoFooter: null,
+      logosFooter: null,
+      logosFooterPayement: null,
     };
   },
   name: "Footer",
   mounted() {
     axios
       .get("https://mashoo.paulakar.fr/wp-json/acf/v3/options/Infos")
-      .then((reponse) => {
-        this.logoFooter = reponse.data;
-        console.log("Répéteur info logo " + this.logoFooter);
+      .then((response) => {
+        this.logosFooter = response.data.acf.social_media;
+        this.logosFooterPayement = response.data.acf.les_moyens_de_payement;
       });
   },
 };
