@@ -66,7 +66,7 @@ export default {
   name: "Footer",
   mounted() {
     axios
-      .get("http://mashoo.paulakar.fr/wp-json/acf/v3/options/Infos/acf")
+      .get("https://mashoo.paulakar.fr/wp-json/acf/v3/options/Infos")
       .then((reponse) => {
         this.logoFooter = reponse.data;
         console.log("Répéteur info logo " + this.logoFooter);

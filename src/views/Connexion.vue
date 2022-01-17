@@ -5,15 +5,21 @@
       <h1 id="titre_h1">Connexion</h1>
       <div class="trait_titre_h1"></div>
     </div>
-    <form>
+    <form @submit="submit">
+      <p if="">
+        Wesh alors <span style="color: red">{{ user.displayName }}</span
+        >, ton mail -> <span style="color: red">{{ user.email }}</span>
+      </p>
       <div class="formulaire">
-        <label class="formulaire__label" for="email">Email</label>
+        <label class="formulaire__label" for="username"
+          >Nom d'utilisateur</label
+        >
         <span class="formulaire__input"
-          ><input type="email" name="email"
+          ><input type="text" name="username" v-model="form.username"
         /></span>
         <label class="formulaire__label" for="mdp">Mot de passe</label>
         <span class="formulaire__input"
-          ><input type="password" name="mot de passe"
+          ><input type="password" name="mot de passe" v-model="form.password"
         /></span>
         <div class="-groupe">
           <span class="formulaire__input -checkbox"
@@ -46,8 +52,19 @@
           >
         </div>
       </div>
+      <button type="submit" class="button__form -centrer">
+        <span>Se connecter</span>
+      </button>
     </form>
-    <button class="button__form -centrer"><span>Se connecter</span></button>
+    <div v-if="success">
+      <p style="color: green; text-align: center">
+        Votre inscription est réussi !
+      </p>
+    </div>
+
+    <div v-if="error">
+      <p style="color: red">{{ errorMessage }}</p>
+    </div>
     <button class="-orange -centrer">
       <span
         ><img src="images/logos_google-icon.png" />
@@ -56,3 +73,59 @@
     </button>
   </section>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  data() {
+    return {
+      form: {
+        username: null,
+        password: null,
+      },
+      success: false,
+      error: false,
+      errorMessage: null,
+    };
+  },
+  methods: {
+    submit(event) {
+      event.preventDefault();
+      console.log(this.form.username);
+      console.log(this.form.password);
+
+      axios
+        .post("https://mashoo.paulakar.fr/wp-json/jwt-auth/v1/token", {
+          username: this.form.username,
+          password: this.form.password,
+        })
+        .then((response) => {
+          console.log(response);
+          if (response.status === 200) {
+            this.success = true;
+            this.error = false;
+            this.$store.commit("setUser", {
+              username: response.data.data.displayName,
+              email: response.data.data.email,
+              authToken: response.data.data.token,
+            });
+            setTimeout(() => {
+              console.log(this.$store.state.user);
+            }, 1000);
+          }
+        })
+        .catch((error) => {
+          console.log("Error LOG : ", error.response);
+          this.errorMessage = error.response.data.message;
+          this.error = true;
+          this.success = false;
+        });
+    },
+  },
+};
+</script>

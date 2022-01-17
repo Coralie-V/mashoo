@@ -34,6 +34,6 @@
         </ul>
       </div>
     </div>
+    <button class="button__form" id="header__btn">Inspirations</button>
   </div>
-  <button class="button__form" id="header__btn">Inspirations</button>
 </template>

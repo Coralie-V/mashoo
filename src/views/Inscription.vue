@@ -87,7 +87,7 @@ export default {
       event.preventDefault();
 
       axios
-        .post("http://mashoo.paulakar.fr/wp-json/wp/v2/users/register", {
+        .post("https://mashoo.paulakar.fr/wp-json/wp/v2/users/register", {
           username: this.form.username,
           email: this.form.email,
           password: this.form.password,

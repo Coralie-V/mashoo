@@ -169,7 +169,7 @@ export default {
     console.log("LOG BACKGROUND INIT", this.background);
 
     axios
-      .get("http://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
+      .get("https://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
       .then((reponse) => {
         this.background = reponse.data;
         console.log("Page home " + this.background);
