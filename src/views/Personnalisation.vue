@@ -314,6 +314,14 @@
               v-for="option in configChaussureSecond.colors"
               :key="option.colors"
               :style="{ backgroundColor: option.color }"
+              :data-color="option.color"
+              @click="
+                optionColorClickHandler(
+                  $event,
+                  configChaussureSecond.label,
+                  option.color
+                )
+              "
             ></li>
           </ul>
           <hr />
@@ -329,6 +337,7 @@
       <div class="col-md-3">
         <div class="description__title">
           <h3>DESCRIPTIF</h3>
+          optionColorClickHandler
           <svg
             id="Calque_1"
             data-name="Calque 1"
@@ -579,6 +588,14 @@ export default {
             8
           );
       });
+  },
+  methods: {
+    optionColorClickHandler(event, element, color) {
+      let shoeElement = element.toLowerCase();
+      let target = document.querySelector(`.${shoeElement}`);
+      target.style.fill = color;
+      console.log(target);
+    },
   },
 };
 </script>
