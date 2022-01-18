@@ -25,6 +25,9 @@
         <li class="nav__list --profil" v-if="isUserLogged">
           <router-link id="--profil" to="/connexion">Profil</router-link>
         </li>
+        <ul> 
+            <li><router-link to="/profil">Mon Profil</router-link></li>
+        </ul>
       </ul>
     </nav>
   </div>

@@ -7,8 +7,8 @@
     </div>
     <form @submit="submit">
       <p if="">
-        Wesh alors <span style="color: red">{{ user.displayName }}</span
-        >, ton mail -> <span style="color: red">{{ user.email }}</span>
+        Bonjour <span style="color: red">{{ user.displayName }}</span
+        >, votre mail -> <span style="color: red">{{ user.email }}</span>
       </p>
       <div class="formulaire">
         <label class="formulaire__label" for="username"
