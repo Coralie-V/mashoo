@@ -1,5 +1,5 @@
 <template>
-  <div class="Accueil">
+  <div class="Accueil min-height">
     <header
       v-bind:style="{ backgroundImage: 'url(' + background.acf.banner + ')' }"
       v-if="background"
@@ -66,8 +66,6 @@
       </div>
       <Caroussel />
 
-     
-
       <div class="avis">
         <div class="TitleH2">
           <div class="traitGauche"></div>
@@ -110,7 +108,7 @@
 
 <script>
 import axios from "axios";
-import Caroussel from "../components/CarrouselInspirations.vue"
+import Caroussel from "../components/CarrouselInspirations.vue";
 
 export default {
   data() {
@@ -120,7 +118,7 @@ export default {
   },
   name: "Home",
   components: {
-    Caroussel : Caroussel
+    Caroussel: Caroussel,
   },
   mounted() {
     console.log("LOG BACKGROUND INIT", this.background);
@@ -129,7 +127,6 @@ export default {
       .get("https://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
       .then((reponse) => {
         this.background = reponse.data;
-        console.log("Page home " + this.background);
       });
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container min-height">
     <div id="titre_page">
       <div class="trait_titre_h1"></div>
       <h1 id="titre_h1">Inscription</h1>
