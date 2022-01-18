@@ -269,7 +269,7 @@
         </defs>
       </svg>
     </div>
-    <h2>Sneakers Mashoo 70€</h2>
+    <h2>Sneakers Mashoo 119.99€</h2>
 
     <div id="block_personnaliser">
       <div id="block_chaussure">
@@ -530,13 +530,13 @@
         > Voir plus d'inspirations
       </button>
 
-      <div class="TitleH2">
+      <div class="TitleH2"  v-if="isUserLogged">
         <div class="traitGauche"></div>
         <h2>Mes modèles</h2>
       </div>
     </div>
 
-    <div class="Block_mesModeles">
+    <div class="Block_mesModeles"  v-if="isUserLogged">
       <div class="row">
         <div class="col-md-4">
           <img src="@/assets/images/chaussure.png" alt="" />
@@ -561,6 +561,11 @@
 import axios from "axios";
 
 export default {
+  computed:{
+   isUserLogged (){
+     return this.$store.state.user.authToken ? true : false
+   }
+ },
   data() {
     return {
       taillesChaussure: null,

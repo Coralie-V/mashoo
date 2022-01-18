@@ -9,6 +9,11 @@
         flex-direction: column;
         margin : 1em;
     }
+    img{
+        width: 20px;
+        position: absolute;
+        transform: translateX(-25px) translateY(4px);
+    }
 }
 
 
