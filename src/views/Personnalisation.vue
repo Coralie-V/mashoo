@@ -269,7 +269,7 @@
         </defs>
       </svg>
     </div>
-    <h2>Sneakers Mashoo 70€</h2>
+    <h2>Sneakers Mashoo 119.99€</h2>
 
     <div id="block_personnaliser">
       <div id="block_chaussure">

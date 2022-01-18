@@ -8,7 +8,7 @@
         <div class="header_chapo">
           <h1>Découvrez la nouvelle paire de sneakers Mashoo</h1>
           <p>Une chaussure unique, totalement personnalisable.</p>
-          <p id="price">70€</p>
+          <p id="price">119.99€</p>
         </div>
         <div class="header__shoe">
           <img
