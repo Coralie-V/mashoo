@@ -19,10 +19,28 @@
         <li class="nav__list">
           <router-link to="/inspirations">Inspirations</router-link>
         </li>
-        <li class="nav__list --login">
+        <li class="nav__list --login" v-if="!isUserLogged">
           <router-link id="--login" to="/connexion">Connexion</router-link>
         </li>
+        <li class="nav__list --profil" v-if="isUserLogged">
+          <router-link id="--profil" to="/connexion">Profil</router-link>
+        </li>
+        <ul> 
+            <li><router-link to="/profil">Mon Profil</router-link></li>
+        </ul>
       </ul>
     </nav>
   </div>
 </template>
+
+<script>
+
+export default{
+ computed:{
+   isUserLogged (){
+     return this.$store.state.user.authToken ? true : false
+   }
+ }
+ }
+</script>
+
