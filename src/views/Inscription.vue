@@ -85,7 +85,6 @@ export default {
   methods: {
     submit(event) {
       event.preventDefault();
-
       axios
         .post("https://mashoo.paulakar.fr/wp-json/wp/v2/users/register", {
           username: this.form.username,
