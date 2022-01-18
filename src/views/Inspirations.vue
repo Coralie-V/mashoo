@@ -104,7 +104,7 @@
               <span class="dropdownArrow">></span> <span>Date</span>
               <div class="-groupe">
                 <span class="formulaire__input -checkbox"
-                  ><input type="checkbox" name="newslatter" /><span
+                  ><input type="radio" name="newslatter" checked/><span
                     class="input__checkbox -new"
                   >
                     <svg
@@ -128,7 +128,7 @@
               </div>
               <div class="-groupe">
                 <span class="formulaire__input -checkbox"
-                  ><input type="checkbox" name="newslatter" /><span
+                  ><input type="radio" name="newslatter" /><span
                     class="input__checkbox -new"
                   >
                     <svg
