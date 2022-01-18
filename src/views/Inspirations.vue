@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container min-height">
     <div class="inspirations">
       <div id="titre_page">
         <div class="trait_titre_h1"></div>
@@ -104,7 +104,7 @@
               <span class="dropdownArrow">></span> <span>Date</span>
               <div class="-groupe">
                 <span class="formulaire__input -checkbox"
-                  ><input type="radio" name="newslatter" checked/><span
+                  ><input type="radio" name="newslatter" checked /><span
                     class="input__checkbox -new"
                   >
                     <svg

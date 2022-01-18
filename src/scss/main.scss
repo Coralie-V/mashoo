@@ -9,6 +9,10 @@ body {
   padding: 0;
 }
 
+.min-height {
+  min-height: 100vh;
+}
+
 @import "foundation/variables";
 @import "foundation/mixins";
 
