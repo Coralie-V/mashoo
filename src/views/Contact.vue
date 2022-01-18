@@ -43,8 +43,7 @@
         <div class="formulaire__message">
           <label for="message" class="formulaire__label">Message</label>
           <span class="formulaire__input -message">
-            <textarea name="message" id="" cols="30" rows="7">
-écrire un message ...</textarea
+            <textarea name="message" id="" cols="30" rows="7" placeholder="Ecris un message ..."></textarea
             >
           </span>
         </div>
@@ -53,3 +52,5 @@
     <button class="button__form -centrer" id="header__btn">Envoyer</button>
   </section>
 </template>
+
+
