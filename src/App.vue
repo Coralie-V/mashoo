@@ -17,6 +17,11 @@ import Nav from "./components/Nav";
 import axios from "axios";
 
 export default {
+  data() {
+    return {
+      pageData: null,
+    };
+  },
   name: "app",
   components: {
     myFooter: Footer,
@@ -27,8 +32,7 @@ export default {
     axios
       .get("http://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
       .then((response) => {
-        let champAcf = (this.pageData = response.data.acf);
-        console.log("le background url de la page d'accueil " + champAcf.logo);
+        this.pageData = response.data.acf;
       })
       .catch((error) => {
         console.log(error);

@@ -172,7 +172,6 @@ export default {
       .get("https://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
       .then((reponse) => {
         this.background = reponse.data;
-        console.log("Page home " + this.background);
       });
   },
 };

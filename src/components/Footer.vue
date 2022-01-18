@@ -17,7 +17,7 @@
         <ul class="footer__group -reseau">
           <li
             v-for="logoFooter in logosFooter"
-            :key="logoFooter"
+            :key="logoFooter.url"
             style="padding-left: 0"
             class="footer__list -reseau"
           >
@@ -30,7 +30,7 @@
         <ul style="padding-bottom: 2%" class="footer__group">
           <li
             v-for="logoFooterPayement in logosFooterPayement"
-            :key="logoFooterPayement"
+            :key="logoFooterPayement.url"
             class="footer__list"
           >
             <a href="#">

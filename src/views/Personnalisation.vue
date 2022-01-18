@@ -259,126 +259,48 @@
       <div id="block_chaussure">
         <span>Tailles</span>
         <div id="taille_chaussure">
-          <div class="div1">
-            <button class="border-gradient border-gradient-purple">36</button>
-          </div>
-          <div class="div2">
-            <button class="border-gradient border-gradient-purple">37</button>
-          </div>
-          <div class="div3">
-            <button class="border-gradient border-gradient-purple">38</button>
-          </div>
-          <div class="div4">
-            <button class="border-gradient border-gradient-purple">39</button>
-          </div>
-          <div class="div5">
-            <button class="border-gradient border-gradient-purple">40</button>
-          </div>
-          <div class="div6">
-            <button class="border-gradient border-gradient-purple">41</button>
-          </div>
-          <div class="div7">
-            <button class="border-gradient border-gradient-purple">42</button>
-          </div>
-          <div class="div8">
-            <button class="border-gradient border-gradient-purple">43</button>
-          </div>
-          <div class="div9">
-            <button class="border-gradient border-gradient-purple">44</button>
-          </div>
-          <div class="div10">
-            <button class="border-gradient border-gradient-purple">45</button>
-          </div>
-          <div class="div11">
-            <button class="border-gradient border-gradient-purple">46</button>
-          </div>
-          <div class="div12">
-            <button class="border-gradient border-gradient-purple">47</button>
+          <div
+            v-for="tailleChaussure in taillesChaussure"
+            :key="tailleChaussure.taillesChaussure"
+          >
+            <button class="border-gradient border-gradient-purple">
+              {{ tailleChaussure }}
+            </button>
           </div>
         </div>
       </div>
       <div class="filtre">
-        <div class="col_coleurs">
-          <span>Lacet</span>
+        <div
+          v-for="configChaussure in configsChaussure"
+          :key="configChaussure.configsChaussure"
+          class="col_coleurs"
+        >
+          <span>{{ configChaussure.label }}</span>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li
+              v-for="option in configChaussure.colors"
+              :key="option.colors"
+              :style="{ backgroundColor: option.color }"
+            ></li>
           </ul>
           <hr />
-          <span>Pointe</span>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <hr />
-          <span>Oeillet</span>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
         </div>
       </div>
       <div class="filtre">
-        <div class="col_coleurs">
-          <span>Empeigne</span>
+        <div
+          v-for="configChaussureSecond in configsChaussureSecond"
+          :key="configChaussureSecond.configsChaussureSecond"
+          class="col_coleurs"
+        >
+          <span>{{ configChaussureSecond.label }}</span>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li
+              v-for="option in configChaussureSecond.colors"
+              :key="option.colors"
+              :style="{ backgroundColor: option.color }"
+            ></li>
           </ul>
           <hr />
-          <span>Semelle</span>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <hr />
-          <span>Bande</span>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
         </div>
       </div>
       <div id="liens">
@@ -547,7 +469,11 @@
           <input id="slide3" type="radio" name="controls" />
           <input id="slide4" type="radio" name="controls" />
           <input id="slide5" type="radio" name="controls" />
-
+          <label for="slide1" class="left-arrow"> &#60; </label>
+          <label for="slide2" class="left-arrow"> &#60; </label>
+          <label for="slide3" class="left-arrow"> &#60; </label>
+          <label for="slide4" class="left-arrow"> &#60; </label>
+          <label for="slide5" class="left-arrow"> &#60; </label>
           <label for="slide1" class="right-arrow"> > </label>
           <label for="slide2" class="right-arrow"> > </label>
           <label for="slide3" class="right-arrow"> > </label>
@@ -606,3 +532,38 @@
     </div>
   </section>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      taillesChaussure: null,
+      configsChaussure: null,
+      configsChaussureSecond: null,
+    };
+  },
+  name: "Personnaliser",
+  created() {
+    axios
+      .get("https://mashoo.paulakar.fr/wp-json/acf/v3/pages/12")
+      .then((response) => {
+        this.taillesChaussure =
+          response.data.acf.groupe_configurateur.taille_chaussure;
+
+        this.configsChaussure =
+          response.data.acf.groupe_configurateur.composant_chaussure_configurateur.slice(
+            0,
+            4
+          );
+
+        this.configsChaussureSecond =
+          response.data.acf.groupe_configurateur.composant_chaussure_configurateur.slice(
+            4,
+            8
+          );
+      });
+  },
+};
+</script>
