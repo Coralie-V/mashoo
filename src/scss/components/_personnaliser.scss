@@ -1,3 +1,99 @@
+path.semelle,
+path.empeigne,
+path.oeillet,
+path.bande,
+path.pointe,
+path.languette,
+path.lacet,
+rect.lacet,
+path.trimestre {
+  transition: all 0.3s ease 0s;
+}
+
+path.bande,
+path.languette,
+path.trimestre,
+path.semelle,
+rect.lacet,
+path.lacet,
+path.empeigne,
+path.oeillet,
+path.pointe {
+  stroke: black;
+  fill: #fff;
+  stroke-width: 1px;
+}
+
+.cls-1 {
+  fill: green;
+  stroke: $stroke;
+}
+.cls-2 {
+  fill: red;
+  stroke: $stroke;
+}
+
+path.cls-3 {
+  fill: purple;
+  stroke: $stroke;
+}
+
+.cls-4 {
+  fill: blue;
+  stroke: $stroke;
+}
+
+.cls-5 {
+  fill: pink;
+  stroke: $stroke;
+}
+
+.cls-14 {
+  fill: royalblue;
+  stroke: $stroke;
+}
+
+.cls-15 {
+  fill: royalblue;
+  stroke: $stroke;
+}
+
+.cls-16 {
+  fill: greenyellow;
+  stroke: $stroke;
+}
+
+.cls-17 {
+  fill: aqua;
+  stroke: $stroke;
+}
+
+.cls-18 {
+  fill: palegoldenrod;
+  stroke: $stroke;
+}
+
+.cls-19 {
+  fill: seagreen;
+  stroke: $stroke;
+}
+
+.cls-6 {
+  fill: red;
+}
+
+.cls-1,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+.cls-1 {
+  stroke-width: 1px;
+}
+.cls-2 {
+  stroke-miterlimit: 10;
+  stroke-width: 1px;
+}
+
 #block_personnaliser {
   display: flex;
   flex-flow: row wrap;
@@ -5,11 +101,10 @@
   .col_coleurs {
     ul {
       margin-top: 1rem;
-      li:hover{
+      li:hover {
         transform: scale(1.7);
-        transition : 0.2s;
+        transition: 0.2s;
         cursor: pointer;
-        
       }
     }
   }

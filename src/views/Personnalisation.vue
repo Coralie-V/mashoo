@@ -70,7 +70,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M198.091 45.6732L194.761 45.3485C193.218 45.0238 191.756 46.2415 191.756 47.7839L189.645 69.8651C189.32 71.4075 190.538 72.8688 192.081 72.8688L195.411 73.1935C196.954 73.5182 198.416 72.3005 198.416 70.7581L200.528 48.6769C200.771 47.1345 199.553 45.9167 198.091 45.6732Z"
           fill="white"
           stroke="black"
@@ -78,7 +78,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M215.31 54.4407L211.98 54.116C210.436 53.7913 208.975 55.009 208.975 56.5514L206.863 78.6326C206.538 80.175 207.756 81.6363 209.299 81.6363L212.629 81.961C214.173 82.2857 215.634 81.068 215.634 79.5256L217.746 57.4444C217.99 55.902 216.772 54.4407 215.31 54.4407Z"
           fill="white"
           stroke="black"
@@ -86,7 +86,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M231.31 62.5588L227.98 62.2341C226.436 61.9094 224.975 63.1271 224.975 64.6695L222.863 86.7507C222.538 88.2931 223.756 89.7544 225.299 89.7544L228.629 90.0791C230.173 90.4038 231.634 89.1861 231.634 87.6437L233.746 65.5625C234.071 64.1013 233.178 62.5588 231.31 62.5588Z"
           fill="white"
           stroke="black"
@@ -94,7 +94,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M247.959 70.4333L244.63 70.1086C243.086 69.7839 241.624 71.0016 241.624 72.544L239.513 94.6252C239.188 96.1677 240.406 97.6289 241.949 97.6289L245.279 97.9536C246.822 98.2784 248.284 97.0607 248.284 95.5182L250.396 73.437C250.721 71.9758 249.503 70.7581 247.959 70.4333Z"
           fill="white"
           stroke="black"
@@ -102,7 +102,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M279.716 86.1824L276.386 85.8577C274.843 85.533 273.381 87.0754 273.381 88.8614L271.837 106.072C271.513 107.858 272.731 109.725 274.274 109.725L277.604 110.05C279.147 110.374 280.609 108.832 280.609 107.046L282.152 89.8356C282.477 88.2931 281.502 86.1824 279.716 86.1824Z"
           fill="white"
           stroke="black"
@@ -110,7 +110,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M293.929 93.0828L290.599 92.7581C289.056 92.4333 287.594 93.9758 287.594 95.7618L286.051 112.972C285.726 114.758 286.944 116.625 288.487 116.625L291.817 116.95C293.36 117.275 294.822 115.732 294.822 113.946L296.366 96.7359C296.366 94.95 295.472 93.0828 293.929 93.0828Z"
           fill="white"
           stroke="black"
@@ -118,7 +118,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M307.249 99.4961L303.919 99.1714C302.376 98.8466 300.914 100.064 300.914 101.932L299.371 117.356C299.046 118.898 300.264 120.684 301.807 120.684L305.137 121.009C306.68 121.334 308.142 120.116 308.142 118.249L309.685 102.824C310.01 100.957 308.792 99.7396 307.249 99.4961Z"
           fill="white"
           stroke="black"
@@ -126,7 +126,7 @@
           stroke-miterlimit="10"
         />
         <path
-          class="lacets"
+          class="lacet"
           d="M265.178 78.6326L262.173 78.3079C260.63 77.9832 259.168 79.2009 259.168 80.7433L256.731 102.825C256.406 104.367 257.624 105.828 259.168 105.828L262.498 106.153C264.041 106.478 265.503 105.26 265.503 103.717L267.614 81.6363C267.939 80.0939 267.046 78.6326 265.178 78.6326Z"
           fill="white"
           stroke="black"
@@ -144,129 +144,144 @@
       </svg>
 
       <svg
-        width="410"
-        height="194"
-        viewBox="0 0 410 194"
-        fill="none"
+        id="Calque_1"
+        data-name="Calque 1"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 379.82 140.76"
       >
-        <g clip-path="url(#clip0_449_975)">
-          <path
-            d="M51.6505 48.6694C36.8505 54.2694 25.0505 65.9694 19.9505 80.9694C18.6505 84.9694 17.6505 89.2694 17.4505 93.8694C16.3505 117.069 34.9505 133.969 34.9505 133.969C34.9505 133.969 78.4505 162.169 132.051 159.969C185.651 157.769 226.95 163.369 226.95 163.369C226.95 163.369 310.551 174.469 364.151 136.869C393.151 116.569 394.151 90.6694 394.151 90.6694C394.151 90.6694 398.051 49.2694 349.451 35.7694C305.651 23.5694 282.251 27.8694 282.251 27.8694C282.251 27.8694 237.551 35.7694 205.751 40.8694C205.751 40.8694 171.351 41.8694 136.551 37.4694C101.251 32.9694 69.2505 41.9694 51.6505 48.6694Z"
-            fill="white"
-            stroke="black"
-            stroke-width="3"
-            stroke-miterlimit="10"
-          />
-          <path
-            d="M287.35 37.9694C287.35 37.9694 286.45 31.7694 323.65 47.9694C360.85 64.1694 381.25 67.5694 380.85 92.7694C380.45 117.969 352.65 128.869 352.65 128.869C352.65 128.869 302.85 150.569 296.95 154.069C291.05 157.569 298.45 133.769 298.45 133.769C298.45 133.769 300.35 126.269 291.65 126.969C282.95 127.769 163.65 135.669 163.65 135.669C163.65 135.669 151.55 139.769 124.65 148.669C97.8502 157.569 48.9502 128.869 48.9502 128.869C48.9502 128.869 -5.24985 97.7694 50.6502 62.2694C106.55 26.7694 152.45 50.9694 152.45 50.9694C152.45 50.9694 183.55 67.9694 229.85 66.1694C275.05 64.4694 299.45 72.5694 301.05 68.4694C306.55 53.6694 287.35 37.9694 287.35 37.9694Z"
-            fill="white"
-            stroke="black"
-            stroke-width="3"
-            stroke-miterlimit="10"
-          />
-          <path
-            d="M126.85 54.3694C126.85 54.3694 144.15 51.3694 152.45 58.8694C160.75 66.3694 291.95 73.5694 291.95 73.5694L291.95 122.169C291.95 122.169 171.15 127.669 155.45 135.769C139.75 143.869 124.95 140.669 124.95 140.669C124.95 140.669 167.05 103.669 126.85 54.3694Z"
-            fill="white"
-            stroke="black"
-            stroke-width="3"
-            stroke-miterlimit="10"
-          />
-          <path
-            d="M291.85 135.669L291.85 58.8694L282.85 58.8694L282.85 135.669L291.85 135.669Z"
-            fill="white"
-            stroke="black"
-            stroke-width="3"
-            stroke-miterlimit="10"
-          />
-          <path
-            d="M291.943 132.961L269.272 59.5863L262.871 61.5641L285.542 134.939L291.943 132.961Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M291.914 61.5991L285.513 59.6213L262.842 132.996L269.243 134.974L291.914 61.5991Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M269.838 132.963L247.167 59.5882L240.765 61.5661L263.437 134.941L269.838 132.963Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M269.958 61.565L263.557 59.5872L240.885 132.962L247.286 134.94L269.958 61.565Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M248.142 132.962L225.471 59.5871L219.07 61.5649L241.741 134.94L248.142 132.962Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M248.184 61.5734L241.783 59.5955L219.111 132.97L225.513 134.948L248.184 61.5734Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M225.243 132.962L202.572 59.5868L196.171 61.5647L218.842 134.939L225.243 132.962Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M225.283 61.5668L218.881 59.589L196.21 132.964L202.611 134.942L225.283 61.5668Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M203.192 132.926L177.421 49.5198L171.02 51.4977L196.791 134.904L203.192 132.926Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M203.186 61.6353L196.785 59.6575L171.191 142.491L177.592 144.469L203.186 61.6353Z"
-            fill="white"
-            stroke="black"
-            stroke-width="2.9999"
-            stroke-miterlimit="9.9997"
-          />
-          <path
-            d="M116.85 50.9694C116.85 50.9694 160.85 99.1694 114.25 140.369C114.25 140.369 33.8502 130.069 34.6502 95.6694C35.4502 58.7694 116.85 50.9694 116.85 50.9694Z"
-            fill="white"
-            stroke="black"
-            stroke-width="3"
-            stroke-miterlimit="10"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_449_975">
-            <rect
-              width="193"
-              height="408.9"
-              fill="white"
-              transform="translate(409.45 0.969391) rotate(90)"
-            />
-          </clipPath>
-        </defs>
+        <defs></defs>
+        <title>chaussure2</title>
+        <path
+          class="cls-1"
+          d="M48.81,48.26a53.08,53.08,0,0,0-31.7,32.3,48.4,48.4,0,0,0-2.5,12.9c-1.1,23.2,17.5,40.1,17.5,40.1s43.5,28.2,97.1,26,94.9,3.4,94.9,3.4,83.6,11.1,137.2-26.5c29-20.3,30-46.2,30-46.2s3.9-41.4-44.7-54.9c-43.8-12.2-67.2-7.9-67.2-7.9s-44.7,7.9-76.5,13c0,0-34.4,1-69.2-3.4C98.41,32.56,66.41,41.56,48.81,48.26Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="pointe"
+          d="M284.51,37.56s-.9-6.2,36.3,10,57.6,19.6,57.2,44.8-28.2,36.1-28.2,36.1-49.8,21.7-55.7,25.2,1.5-20.3,1.5-20.3,1.9-7.5-6.8-6.8-128,8.7-128,8.7-12.1,4.1-39,13-75.7-19.8-75.7-19.8-54.2-31.1,1.7-66.6,101.8-11.3,101.8-11.3,31.1,17,77.4,15.2c45.2-1.7,69.6,6.4,71.2,2.3C303.71,53.26,284.51,37.56,284.51,37.56Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="languette"
+          d="M124,54s17.3-3,25.6,4.5,139.5,14.7,139.5,14.7v48.6s-120.8,5.5-136.5,13.6a49.6,49.6,0,0,1-30.5,4.9S164.21,103.26,124,54Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <rect class="lacet" x="266.95" y="33.24" width="9" height="76.8" />
+        <rect
+          class="lacet"
+          x="271.22"
+          y="58.46"
+          width="6.7"
+          height="76.8"
+          transform="translate(-29.42 60.15) rotate(-17.17)"
+        />
+        <rect
+          class="lacet"
+          x="236.14"
+          y="93.54"
+          width="76.8"
+          height="6.7"
+          transform="translate(87.85 305.37) rotate(-72.83)"
+        />
+        <rect
+          class="lacet"
+          x="249.12"
+          y="58.46"
+          width="6.7"
+          height="76.8"
+          transform="translate(-30.41 53.62) rotate(-17.17)"
+        />
+        <rect
+          class="lacet"
+          x="214.19"
+          y="93.51"
+          width="76.8"
+          height="6.7"
+          transform="translate(72.41 284.36) rotate(-72.83)"
+        />
+        <rect
+          class="lacet"
+          x="227.42"
+          y="58.46"
+          width="6.7"
+          height="76.8"
+          transform="translate(-31.38 47.21) rotate(-17.17)"
+        />
+        <rect
+          class="lacet"
+          x="192.41"
+          y="93.52"
+          width="76.8"
+          height="6.7"
+          transform="translate(57.06 263.57) rotate(-72.83)"
+        />
+        <rect
+          class="lacet"
+          x="204.52"
+          y="58.46"
+          width="6.7"
+          height="76.8"
+          transform="translate(-32.4 40.45) rotate(-17.17)"
+        />
+        <rect
+          class="lacet"
+          x="169.51"
+          y="93.51"
+          width="76.8"
+          height="6.7"
+          transform="translate(40.92 241.68) rotate(-72.83)"
+        />
+        <rect
+          class="lacet"
+          x="180.92"
+          y="48.16"
+          width="6.7"
+          height="87.3"
+          transform="translate(-31.96 33.26) rotate(-17.17)"
+        />
+        <rect
+          class="lacet"
+          x="141"
+          y="98.31"
+          width="86.7"
+          height="6.7"
+          transform="translate(19.74 222.56) rotate(-72.83)"
+        />
+        <path
+          class="semelle"
+          d="M114,50.56s44,48.2-2.6,89.4c0,0-80.4-10.3-79.6-44.7C32.61,58.36,114,50.56,114,50.56Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="pointe"
+          d="M273.05,67.2s16.43-5.64-9.49-37l15.85-2.78S339,23.85,371.34,47.33c0,0,22.31,16.45,20,42.93s-30,46.2-30,46.2-25.12,19.31-66.49,24.83l-31.26,3s24.17-10.76,11-36.68H280v7.65h9l-.2-8.7s4.93-.3,5.89,1.74,1.52,2.16-.07,8.44-4.38,16-1.47,17.27l37-16.91s39.56-13,45.15-32.11.51-25.39.51-25.39a27.79,27.79,0,0,0-12.38-13.07C354.23,61.68,309.87,43,309.87,43s-24.78-9.69-25.36-5.43c0,0,13.79,11.41,14.47,22.12a14,14,0,0,1-.77,8.38s-.21,1.73-7.21,1l-2-.18V58.46h-9l0,9.46Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="bande"
+          d="M146.8,140s-11.92,21.63-31,19.54-18.21-.93-31.3-4.61-31.63-8.37-52.37-21.33c0,0-17.74-18.12-17.54-36.43s6.89-28.37,17.24-38.59,39.56-17.3,39.56-17.3,24-7.23,62.34-4.18c0,0,12.63,4.09,15.9,13.5,0,0-33-17.8-79.83,0s-47,41.25-47,41.25-5.71,30.78,55.1,51.39c0,0,17.93,8.21,38.24,6.36Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="empeigne"
+          d="M184.35,133.7s-3.89,18.53-12.34,25.59H125.73A46.37,46.37,0,0,0,146.8,140l14-4.7,9.95-1-2.4,7.78,6.4,2,3.06-9.93Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="empeigne"
+          d="M179.82,40.17,188.17,63l-10-2.15-3.62-11.7-6.4,2,2.36,7.62-20.93-8.15s-2.88-9.09-15.9-13.5Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="trimestre"
+          d="M179.82,40.17l23.09.29,60.65-10.22s15.15,16.94,14.59,27.19c0,0,1,6.76-5.1,9.77l-3-.28-1.23-.11-2.35-7.63-2.86.88-2.86-.88-2.13,6.89-12.28-.48-2-6.41-2.7.84L239,59.19l-2,6.35-10,.22-2.32.08-2.06-6.66-3.29,1-3.29-1L214,65.79,201.87,65l-2.13-5.77-3,.93L194,59.25l-1.38,4.47-4.4-.76Z"
+          transform="translate(-13.07 -25.23)"
+        />
+        <path
+          class="trimestre"
+          d="M172,159.29l35.9,2a305.6,305.6,0,0,0,55.65,3s24.55-11.61,11-36.68l-6.11.42-2,6.54-3-.92-2.85.88-1.8-5.84-12.81.88-1.54,5-2.77-.85-2.77.85-1.36-4.39-13.8.92-1.07,3.48-3.35-1-3.32,1-.9-2.89-14.75.88-.58,2-3-.91-2.85.88-.43-1.41-9.17.61S180.88,151.67,172,159.29Z"
+          transform="translate(-13.07 -25.23)"
+        />
       </svg>
     </div>
     <h2>Sneakers Mashoo 119.99€</h2>
@@ -285,6 +300,7 @@
           </div>
         </div>
       </div>
+      <!-- PREMIERE COLONNE -->
       <div class="filtre">
         <div
           v-for="configChaussure in configsChaussure"
@@ -297,11 +313,20 @@
               v-for="option in configChaussure.colors"
               :key="option.colors"
               :style="{ backgroundColor: option.color }"
+              :data-color="option.color"
+              @click="
+                optionColorClickHandler(
+                  $event,
+                  configChaussure.label,
+                  option.color
+                )
+              "
             ></li>
           </ul>
           <hr />
         </div>
       </div>
+      <!-- DEUXIEME COLONNE -->
       <div class="filtre">
         <div
           v-for="configChaussureSecond in configsChaussureSecond"
@@ -311,15 +336,15 @@
           <span>{{ configChaussureSecond.label }}</span>
           <ul>
             <li
-              v-for="option in configChaussureSecond.colors"
-              :key="option.colors"
-              :style="{ backgroundColor: option.color }"
-              :data-color="option.color"
+              v-for="optionSecCol in configChaussureSecond.colors"
+              :key="optionSecCol.colors"
+              :style="{ backgroundColor: optionSecCol.color }"
+              :data-color="optionSecCol.color"
               @click="
-                optionColorClickHandler(
+                optionColorClickHandlerSecondCol(
                   $event,
                   configChaussureSecond.label,
-                  option.color
+                  optionSecCol.color
                 )
               "
             ></li>
@@ -330,14 +355,14 @@
       <div id="liens">
         <a href="#">Enregistrer ma paire dans mes modèles</a>
         <a href="#">Partager mon modèle dans Inspirations</a>
-        <button class="button__form">Précommander</button>
+        <button class="button__form" @click="submitShoe">Précommander</button>
       </div>
     </div>
     <div class="row justify-content-center description">
       <div class="col-md-3">
         <div class="description__title">
           <h3>DESCRIPTIF</h3>
-          optionColorClickHandler
+
           <svg
             id="Calque_1"
             data-name="Calque 1"
@@ -530,13 +555,13 @@
         > Voir plus d'inspirations
       </button>
 
-      <div class="TitleH2"  v-if="isUserLogged">
+      <div class="TitleH2" v-if="isUserLogged">
         <div class="traitGauche"></div>
         <h2>Mes modèles</h2>
       </div>
     </div>
 
-    <div class="Block_mesModeles"  v-if="isUserLogged">
+    <div class="Block_mesModeles" v-if="isUserLogged">
       <div class="row">
         <div class="col-md-4">
           <img src="@/assets/images/chaussure.png" alt="" />
@@ -561,16 +586,17 @@
 import axios from "axios";
 
 export default {
-  computed:{
-   isUserLogged (){
-     return this.$store.state.user.authToken ? true : false
-   }
- },
+  computed: {
+    isUserLogged() {
+      return this.$store.state.user.authToken ? true : false;
+    },
+  },
   data() {
     return {
       taillesChaussure: null,
       configsChaussure: null,
       configsChaussureSecond: null,
+      shoeName: "",
     };
   },
   name: "Personnaliser",
@@ -597,9 +623,38 @@ export default {
   methods: {
     optionColorClickHandler(event, element, color) {
       let shoeElement = element.toLowerCase();
-      let target = document.querySelector(`.${shoeElement}`);
-      target.style.fill = color;
-      console.log(target);
+      let target = document.querySelectorAll(`.${shoeElement}`);
+      for (var i = 0; i < target.length; i++) {
+        target[i].style.fill = color;
+      }
+    },
+    optionColorClickHandlerSecondCol(event, elementSecCol, color) {
+      let shoeElementSecCol = elementSecCol.toLowerCase();
+      let targetSecCol = document.querySelectorAll(`.${shoeElementSecCol}`);
+      for (var x = 0; x < targetSecCol.length; x++) {
+        targetSecCol[x].style.fill = color;
+      }
+    },
+    submitShoe() {
+      axios
+        .post(
+          "https://mashoo.paulakar.fr/wp-json/wp/v2/shoes",
+          {
+            status: "publish",
+            title: this.$store.state.displayName,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${this.$store.state.user.authToken}`,
+            },
+          }
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            // FAITES CE QUI FAUT
+          }
+        });
     },
   },
 };
