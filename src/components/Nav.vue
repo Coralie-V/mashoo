@@ -24,10 +24,18 @@
         </li>
         <li class="nav__list --profil" v-if="isUserLogged">
           <router-link id="--profil" to="/connexion">Profil</router-link>
-        </li>
-        <ul> 
+          <ul class="nav__hover"> 
             <li><router-link to="/profil">Mon Profil</router-link></li>
+            <li><router-link to="/profil">Mes modèles</router-link></li>
+            <li><button
+        v-if="$store.state.user.authToken"
+        @click="$store.commit('removeUser')"
+      >
+        Déconnexion
+      </button></li>
         </ul>
+        </li>
+        
       </ul>
     </nav>
   </div>
