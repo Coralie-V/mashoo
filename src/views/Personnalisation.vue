@@ -355,7 +355,7 @@
       <div id="liens">
         <a href="#">Enregistrer ma paire dans mes modèles</a>
         <a href="#">Partager mon modèle dans Inspirations</a>
-        <button class="button__form" @click="submitShoe">Précommander</button>
+        <button class="button__form" @click="screenshot">Précommander</button>
       </div>
     </div>
     <div class="row justify-content-center description">
@@ -584,6 +584,7 @@
 </template>
 <script>
 import axios from "axios";
+import domtoimage from "dom-to-image-more";
 
 export default {
   computed: {
@@ -621,6 +622,17 @@ export default {
       });
   },
   methods: {
+    screenshot() {
+      domtoimage
+        .toJpeg(document.getElementById("personnaliser"), { quality: 0.8 })
+        .then((image) => {
+          var link = document.createElement("a");
+          link.download = "my-image-name.jpeg";
+          link.href = image;
+          link.click();
+        });
+    },
+
     optionColorClickHandler(event, element, color) {
       let shoeElement = element.toLowerCase();
       let target = document.querySelectorAll(`.${shoeElement}`);

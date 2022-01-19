@@ -3,7 +3,6 @@
     <div id="titre_page">
       <div class="trait_titre_h1"></div>
       <h1 id="titre_h1">Connexion</h1>
-      
 
       <div class="trait_titre_h1"></div>
     </div>
