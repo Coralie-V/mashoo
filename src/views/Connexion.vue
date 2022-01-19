@@ -3,12 +3,7 @@
     <div id="titre_page">
       <div class="trait_titre_h1"></div>
       <h1 id="titre_h1">Connexion</h1>
-      <button
-        v-if="$store.state.user.authToken"
-        @click="$store.commit('removeUser')"
-      >
-        Déconnexion
-      </button>
+      
 
       <div class="trait_titre_h1"></div>
     </div>
