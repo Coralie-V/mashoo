@@ -6,14 +6,14 @@
     >
       <div class="banner">
         <div class="header_chapo">
-          <h1>Découvrez la nouvelle paire de sneakers Mashoo</h1>
-          <p>Une chaussure unique, totalement personnalisable.</p>
-          <p id="price">119.99€</p>
+          <h1> {{ background.acf.titre }}</h1>
+          <p>{{ background.acf['sous-titre'] }}</p>
+          <p id="price">{{ background.acf.prix }}</p>
         </div>
         <div class="header__shoe">
           <img
             class="header__img"
-            src="@/assets/images/header-basket.png"
+            v-bind:src="background.acf.logo"
             alt="image chaussure"
           />
           <button
@@ -27,35 +27,28 @@
       </div>
     </header>
     <section class="container">
-      <div class="histoire_marque">
+      <div class="histoire_marque" v-if="histoire">
         <div class="TitleH2">
           <div class="traitGauche"></div>
           <h2>Histoire de la marque</h2>
         </div>
 
         <div class="paragraph">
-          <img src="@/assets/images/histoire_chaussure.png" alt="" />
+          <img v-bind:src="histoire.image_1.url" v-bind:alt="histoire.image_1.name" />
 
           <p>
-            Mashoo est une société qui propose à ses clients d’acheter sa propre
-            paire de sneakers totalement personnalisable. Nous offrons la
-            possibilité de choisir la couleurs de chaque composant de la
-            chaussure.
+            {{histoire.paragraphe_1}}
           </p>
         </div>
 
         <div class="paragraph">
           <p>
-            Mashoo est une société qui propose à ses clients d’acheter sa propre
-            paire de sneakers totalement personnalisable. Nous offrons la
-            possibilité de choisir la couleurs de chaque composant de la
-            chaussure.
+            {{histoire.paragraphe_2}}
           </p>
 
           <img
             class="histoire_chaussure_II"
-            src="@/assets/images/histoire_chaussure_II.png"
-            alt=""
+            v-bind:src="histoire.image_2.url" v-bind:alt="histoire.image_2.name"
           />
         </div>
       </div>
@@ -72,34 +65,28 @@
           <h2>TÉMOIGNAGES</h2>
         </div>
 
-        <div class="carte_avis">
+        <div class="carte_avis" v-if="tab_temoin">
           <p class="avis_paragraphe">
-            “ J’ai eu la chance de tester cette paire avant les précommandes et
-            j’en ai gardé une très bonne expérience pendant ma séance de
-            fitness. Je recommande très fortement ! “
+            “ {{ tab_temoin[0].avis.le_temoignage }} “
           </p>
 
-          <p class="avis_marque">- Magazine ELLE</p>
+          <p class="avis_marque">- {{ tab_temoin[0].avis.le_magazine }}</p>
         </div>
 
         <div class="carte_avis">
           <p class="avis_paragraphe">
-            “ J’ai eu la chance de tester cette paire avant les précommandes et
-            j’en ai gardé une très bonne expérience pendant ma séance de
-            fitness. Je recommande très fortement ! “
+            “ {{ tab_temoin[1].avis.le_temoignage }} “
           </p>
 
-          <p class="avis_marque">- Magazine ELLE</p>
+          <p class="avis_marque">- {{ tab_temoin[1].avis.le_magazine }}</p>
         </div>
 
         <div class="carte_avis">
           <p class="avis_paragraphe">
-            “ J’ai eu la chance de tester cette paire avant les précommandes et
-            j’en ai gardé une très bonne expérience pendant ma séance de
-            fitness. Je recommande très fortement ! “
+            “ {{ tab_temoin[2].avis.le_temoignage }} “
           </p>
 
-          <p class="avis_marque">- Magazine ELLE</p>
+          <p class="avis_marque">- {{ tab_temoin[2].avis.le_magazine }}</p>
         </div>
       </div>
     </section>
@@ -114,6 +101,9 @@ export default {
   data() {
     return {
       background: null,
+      tab_temoin: null,
+      histoire:null,
+      
     };
   },
   name: "Home",
@@ -125,8 +115,16 @@ export default {
 
     axios
       .get("https://mashoo.paulakar.fr/wp-json/wp/v2/pages/5")
-      .then((reponse) => {
-        this.background = reponse.data;
+      .then((response) => {
+        // background
+        this.background = response.data;
+        console.log("on test : ", this.background.acf.logo);
+        // Histoire de la marque
+        this.histoire = response.data.acf;
+        // Les avis
+        this.tab_temoin = response.data.acf.temoignages;
+        
+        
       });
   },
 };
