@@ -5,18 +5,23 @@ path.bande,
 path.pointe,
 path.languette,
 path.lacet,
+rect.lacet,
 path.trimestre {
   transition: all 0.3s ease 0s;
 }
 
-rect.lacet {
+path.bande,
+path.languette,
+path.trimestre,
+path.semelle,
+rect.lacet,
+path.lacet,
+path.empeigne,
+path.oeillet,
+path.pointe {
   stroke: black;
   fill: #fff;
-}
-
-path.semelle {
-  fill: #fff;
-  stroke: black;
+  stroke-width: 1px;
 }
 
 .cls-1 {
