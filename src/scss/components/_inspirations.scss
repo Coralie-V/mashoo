@@ -23,13 +23,11 @@
         height: 20px;
         background-color: $rouge;
         border-radius: 50%;
-      
+        transition: 0.2s;
       }
-      li:hover{
-        transform: scale(1.7);
-        transition : 0.2s;
+      li:hover {
+        transform: scale(1.4);
         cursor: pointer;
-        
       }
       li:first-child {
         background-color: $blanc;

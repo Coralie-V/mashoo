@@ -353,9 +353,14 @@
         </div>
       </div>
       <div id="liens">
+        <button v-if="shoeCreated" style="color: #42b983" href="/profil">
+          <router-link to="/profil">voir ma paire</router-link>
+        </button>
         <a href="#">Enregistrer ma paire dans mes modèles</a>
         <a href="#">Partager mon modèle dans Inspirations</a>
-        <button class="button__form" @click="screenshot">Précommander</button>
+        <button class="button__form" @click="saveShoeHandler()">
+          Précommander
+        </button>
       </div>
     </div>
     <div class="row justify-content-center description">
@@ -551,17 +556,21 @@
           </div>
         </div>
       </div>
-      <button class="button__form" id="header__btn">
+      <button
+        class="button__form"
+        id="header__btn"
+        onclick="window.location.href='http://localhost:8080/inspirations'"
+      >
         > Voir plus d'inspirations
       </button>
 
-      <div class="TitleH2" v-if="isUserLogged">
+      <div class="TitleH2">
         <div class="traitGauche"></div>
         <h2>Mes modèles</h2>
       </div>
     </div>
 
-    <div class="Block_mesModeles" v-if="isUserLogged">
+    <div class="Block_mesModeles">
       <div class="row">
         <div class="col-md-4">
           <img src="@/assets/images/chaussure.png" alt="" />
@@ -587,20 +596,85 @@ import axios from "axios";
 import domtoimage from "dom-to-image-more";
 
 export default {
-  computed: {
-    isUserLogged() {
-      return this.$store.state.user.authToken ? true : false;
-    },
-  },
   data() {
     return {
       taillesChaussure: null,
       configsChaussure: null,
       configsChaussureSecond: null,
       shoeName: "",
+      shoeCreated: null,
     };
   },
-  name: "Personnaliser",
+  methods: {
+    saveShoeHandler() {
+      this.getScreenShot(this.sendImageToWPMediaLibrary);
+    },
+
+    getScreenShot(callback) {
+      domtoimage
+        .toBlob(document.getElementById("personnaliser"))
+        .then((image) => {
+          callback(image);
+        });
+    },
+
+    sendImageToWPMediaLibrary(image) {
+      axios
+        .post(
+          "https://mashoo.paulakar.fr/wp-json/wp/v2/media",
+          image,
+
+          {
+            headers: {
+              "Content-Disposition": `attachment; filename="${this.$store.state.user.displayName}.jpg"`,
+              Authorization: `Bearer ${this.$store.state.user.authToken}`,
+            },
+          }
+        )
+        .then((response) => {
+          if (response.data.id) {
+            this.createShoe(response.data.source_url);
+          }
+        });
+    },
+    createShoe(imageURL) {
+      axios
+        .post(
+          "https://mashoo.paulakar.fr/wp-json/wp/v2/shoes",
+          {
+            "status": "publish",
+            "title": this.$store.state.user.displayName,
+            'fields': {
+              'image_URL': imageURL,
+            },
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.$store.state.user.authToken}`,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("SHOE IS CREATED", response);
+          this.shoeCreated = true;
+        });
+    },
+    optionColorClickHandler(event, element, color) {
+      let shoeElement = element.toLowerCase();
+      let target = document.querySelectorAll(`.${shoeElement}`);
+      for (var i = 0; i < target.length; i++) {
+        target[i].style.fill = color;
+      }
+    },
+    optionColorClickHandlerSecondCol(event, elementSecCol, color) {
+      let shoeElementSecCol = elementSecCol.toLowerCase();
+      let targetSecCol = document.querySelectorAll(`.${shoeElementSecCol}`);
+      for (var x = 0; x < targetSecCol.length; x++) {
+        targetSecCol[x].style.fill = color;
+      }
+    },
+  },
   created() {
     axios
       .get("https://mashoo.paulakar.fr/wp-json/acf/v3/pages/12")
@@ -620,54 +694,6 @@ export default {
             8
           );
       });
-  },
-  methods: {
-    screenshot() {
-      domtoimage
-        .toJpeg(document.getElementById("personnaliser"), { quality: 0.8 })
-        .then((image) => {
-          var link = document.createElement("a");
-          link.download = "my-image-name.jpeg";
-          link.href = image;
-          link.click();
-        });
-    },
-
-    optionColorClickHandler(event, element, color) {
-      let shoeElement = element.toLowerCase();
-      let target = document.querySelectorAll(`.${shoeElement}`);
-      for (var i = 0; i < target.length; i++) {
-        target[i].style.fill = color;
-      }
-    },
-    optionColorClickHandlerSecondCol(event, elementSecCol, color) {
-      let shoeElementSecCol = elementSecCol.toLowerCase();
-      let targetSecCol = document.querySelectorAll(`.${shoeElementSecCol}`);
-      for (var x = 0; x < targetSecCol.length; x++) {
-        targetSecCol[x].style.fill = color;
-      }
-    },
-    submitShoe() {
-      axios
-        .post(
-          "https://mashoo.paulakar.fr/wp-json/wp/v2/shoes",
-          {
-            status: "publish",
-            title: this.$store.state.displayName,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${this.$store.state.user.authToken}`,
-            },
-          }
-        )
-        .then((response) => {
-          if (response.status === 200) {
-            // FAITES CE QUI FAUT
-          }
-        });
-    },
   },
 };
 </script>

@@ -105,11 +105,12 @@ export default {
           password: this.form.password,
         })
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             this.success = true;
             this.error = false;
+
             this.$store.commit("setUser", {
+              userid: response.data.data.id,
               username: response.data.data.displayName,
               email: response.data.data.email,
               authToken: response.data.data.token,
