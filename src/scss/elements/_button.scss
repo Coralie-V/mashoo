@@ -70,3 +70,9 @@
   margin: 3em auto 1em !important;
   display: block;
 }
+.button__perso{
+  color: $noir;
+}
+.button__form:hover .button__perso{
+  color: $blanc;
+}

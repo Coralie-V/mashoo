@@ -558,10 +558,9 @@
       </div>
       <button
         class="button__form"
-        id="header__btn"
-        onclick="window.location.href='http://localhost:8080/inspirations'"
-      >
-        > Voir plus d'inspirations
+        id="header__btn" >
+          <router-link  class="button__perso" to="/inspirations">Voir plus d'inspirations</router-link>
+     
       </button>
 
       <div class="TitleH2">
@@ -586,7 +585,7 @@
         </div>
       </div>
       <button class="button__form" id="header__btn">
-        > Voir tous mes modèles
+         <router-link class="button__perso" to="/modeles">Voir tous mes modèles</router-link>
       </button>
     </div>
   </section>
