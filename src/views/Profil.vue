@@ -47,7 +47,9 @@ export default {
   methods: {
     getData() {
       this.axios
-        .get("https://mashoo.paulakar.fr/wp-json/wp/v2/shoes")
+        .get(
+          `https://mashoo.paulakar.fr/wp-json/wp/v2/shoes?author=${this.$store.state.user.id}`
+        )
         .then((result) => {
           console.warn(result);
           this.shoes = result.data;

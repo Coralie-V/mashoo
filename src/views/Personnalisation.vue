@@ -296,7 +296,7 @@
           >
             <button
               class="border-gradient border-gradient-purple"
-              v-on:click="registerSizeShoe()"
+              id="taille_une_chaussure"
             >
               {{ tailleChaussure }}
             </button>
@@ -540,7 +540,7 @@
         </div>
       </div>
       <button class="button__form" id="header__btn">
-         <router-link class="button__perso" to="/modeles">Voir tous mes modèles</router-link>
+        > Voir tous mes modèles
       </button>
     </div>
   </section>
@@ -595,9 +595,8 @@ export default {
           }
         });
     },
-    registerSizeShoe() {},
 
-    saveShoeHandler(imageURL, sizeShoe) {
+    createShoe(imageURL, sizeShoe) {
       axios
         .post(
           "https://mashoo.paulakar.fr/wp-json/wp/v2/shoes",
