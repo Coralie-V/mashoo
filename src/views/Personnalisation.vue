@@ -294,7 +294,10 @@
             v-for="tailleChaussure in taillesChaussure"
             :key="tailleChaussure.taillesChaussure"
           >
-            <button class="border-gradient border-gradient-purple">
+            <button
+              class="border-gradient border-gradient-purple"
+              v-on:click="registerSizeShoe()"
+            >
               {{ tailleChaussure }}
             </button>
           </div>
@@ -352,16 +355,14 @@
           <hr />
         </div>
       </div>
-      <div id="liens">
-        <button v-if="shoeCreated" style="color: #42b983" href="/profil">
-          <router-link to="/profil">voir ma paire</router-link>
-        </button>
-        <a href="#">Enregistrer ma paire dans mes modèles</a>
-        <a href="#">Partager mon modèle dans Inspirations</a>
-        <button class="button__form" @click="saveShoeHandler()">
-          Précommander
-        </button>
-      </div>
+    </div>
+    <div id="liens">
+      <button v-if="shoeCreated" href="/profil">
+        <router-link style="color: #000" to="/profil"
+          >voir ma paire</router-link
+        >
+      </button>
+      <button @click="saveShoeHandler()">Précommander</button>
     </div>
     <div class="row justify-content-center description">
       <div class="col-md-3">
@@ -515,54 +516,7 @@
         <div class="traitGauche"></div>
         <h2>INSPIRATIONS</h2>
       </div>
-
-      <div class="center">
-        <div class="carousel-wrapper">
-          <!-- abstract radio buttons for slides -->
-          <input id="slide1" type="radio" name="controls" checked="checked" />
-          <input id="slide2" type="radio" name="controls" />
-          <input id="slide3" type="radio" name="controls" />
-          <input id="slide4" type="radio" name="controls" />
-          <input id="slide5" type="radio" name="controls" />
-          <label for="slide1" class="left-arrow"> &#60; </label>
-          <label for="slide2" class="left-arrow"> &#60; </label>
-          <label for="slide3" class="left-arrow"> &#60; </label>
-          <label for="slide4" class="left-arrow"> &#60; </label>
-          <label for="slide5" class="left-arrow"> &#60; </label>
-          <label for="slide1" class="right-arrow"> > </label>
-          <label for="slide2" class="right-arrow"> > </label>
-          <label for="slide3" class="right-arrow"> > </label>
-          <label for="slide4" class="right-arrow"> > </label>
-          <label for="slide5" class="right-arrow"> > </label>
-
-          <div class="carousel">
-            <ul>
-              <li>
-                <img src="@/assets/images/chaussure.png" />
-              </li>
-              <li>
-                <img src="@/assets/images/chaussure.png" />
-              </li>
-              <li>
-                <img src="@/assets/images/chaussure.png" />
-              </li>
-              <li>
-                <img src="@/assets/images/chaussure.png" />
-              </li>
-              <li>
-                <img src="@/assets/images/chaussure.png" />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <button
-        class="button__form"
-        id="header__btn"
-        onclick="window.location.href='http://localhost:8080/inspirations'"
-      >
-        > Voir plus d'inspirations
-      </button>
+      <Caroussel />
 
       <div class="TitleH2">
         <div class="traitGauche"></div>
@@ -594,6 +548,7 @@
 <script>
 import axios from "axios";
 import domtoimage from "dom-to-image-more";
+import Caroussel from "../components/CarrouselInspirations.vue";
 
 export default {
   data() {
@@ -604,6 +559,9 @@ export default {
       shoeName: "",
       shoeCreated: null,
     };
+  },
+  components: {
+    Caroussel: Caroussel,
   },
   methods: {
     saveShoeHandler() {
@@ -637,21 +595,24 @@ export default {
           }
         });
     },
-    createShoe(imageURL) {
+    registerSizeShoe() {},
+
+    saveShoeHandler(imageURL, sizeShoe) {
       axios
         .post(
           "https://mashoo.paulakar.fr/wp-json/wp/v2/shoes",
           {
-            "status": "publish",
-            "title": this.$store.state.user.displayName,
-            'fields': {
-              'image_URL': imageURL,
+            status: "publish",
+            title: this.$store.state.user.displayName,
+            fields: {
+              image_URL: imageURL,
+              taille_chaussure: sizeShoe,
             },
           },
           {
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${this.$store.state.user.authToken}`,
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${this.$store.state.user.authToken}`,
             },
           }
         )

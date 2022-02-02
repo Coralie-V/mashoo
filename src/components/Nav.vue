@@ -25,8 +25,8 @@
         <li class="nav__list --profil" v-if="isUserLogged">
           <router-link id="--profil" to="/connexion">Profil</router-link>
           <ul class="nav__hover">
-            <li><router-link to="/profil">Mon Profil</router-link></li>
             <li><router-link to="/profil">Mes modèles</router-link></li>
+            <div class="nav__line"></div>
             <li>
               <button
                 v-if="$store.state.user.authToken"

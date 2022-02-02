@@ -7,7 +7,7 @@
       <div class="trait_titre_h1"></div>
     </div>
     <form @submit="submit">
-      <p if="">
+      <p v-if="isUserLogged">
         Bonjour <span style="color: red">{{ user.displayName }}</span
         >, votre mail -> <span style="color: red">{{ user.email }}</span>
       </p>
@@ -68,7 +68,7 @@
     </div>
     <button class="-orange -centrer">
       <span
-        ><img src="images/logos_google-icon.png" />
+        ><img src="@/assets/images/logos_google-icon.png" />
         <p>Connexion avec Google</p></span
       >
     </button>
@@ -80,6 +80,9 @@ export default {
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    isUserLogged() {
+      return this.$store.state.user.authToken ? true : false;
     },
   },
   data() {
@@ -93,6 +96,7 @@ export default {
       errorMessage: null,
     };
   },
+
   methods: {
     submit(event) {
       event.preventDefault();

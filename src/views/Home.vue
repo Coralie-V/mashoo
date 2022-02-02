@@ -6,8 +6,8 @@
     >
       <div class="banner">
         <div class="header_chapo">
-          <h1> {{ background.acf.titre }}</h1>
-          <p>{{ background.acf['sous-titre'] }}</p>
+          <h1>{{ background.acf.titre }}</h1>
+          <p>{{ background.acf["sous-titre"] }}</p>
           <p id="price">{{ background.acf.prix }}</p>
         </div>
         <div class="header__shoe">
@@ -34,21 +34,25 @@
         </div>
 
         <div class="paragraph">
-          <img v-bind:src="histoire.image_1.url" v-bind:alt="histoire.image_1.name" />
+          <img
+            v-bind:src="histoire.image_1.url"
+            v-bind:alt="histoire.image_1.name"
+          />
 
           <p>
-            {{histoire.paragraphe_1}}
+            {{ histoire.paragraphe_1 }}
           </p>
         </div>
 
         <div class="paragraph">
           <p>
-            {{histoire.paragraphe_2}}
+            {{ histoire.paragraphe_2 }}
           </p>
 
           <img
             class="histoire_chaussure_II"
-            v-bind:src="histoire.image_2.url" v-bind:alt="histoire.image_2.name"
+            v-bind:src="histoire.image_2.url"
+            v-bind:alt="histoire.image_2.name"
           />
         </div>
       </div>
@@ -65,28 +69,9 @@
           <h2>TÉMOIGNAGES</h2>
         </div>
 
-        <div class="carte_avis" v-if="tab_temoin">
-          <p class="avis_paragraphe">
-            “ {{ tab_temoin[0].avis.le_temoignage }} “
-          </p>
-
-          <p class="avis_marque">- {{ tab_temoin[0].avis.le_magazine }}</p>
-        </div>
-
-        <div class="carte_avis">
-          <p class="avis_paragraphe">
-            “ {{ tab_temoin[1].avis.le_temoignage }} “
-          </p>
-
-          <p class="avis_marque">- {{ tab_temoin[1].avis.le_magazine }}</p>
-        </div>
-
-        <div class="carte_avis">
-          <p class="avis_paragraphe">
-            “ {{ tab_temoin[2].avis.le_temoignage }} “
-          </p>
-
-          <p class="avis_marque">- {{ tab_temoin[2].avis.le_magazine }}</p>
+        <div v-for="temoin in temoins" :key="temoin.url" class="carte_avis">
+          <p class="avis_paragraphe">“ {{ temoin.avis.le_temoignage }} “</p>
+          <p class="avis_marque">- {{ temoin.avis.le_magazine }}</p>
         </div>
       </div>
     </section>
@@ -102,8 +87,8 @@ export default {
     return {
       background: null,
       tab_temoin: null,
-      histoire:null,
-      
+      histoire: null,
+      temoins: null,
     };
   },
   name: "Home",
@@ -122,9 +107,7 @@ export default {
         // Histoire de la marque
         this.histoire = response.data.acf;
         // Les avis
-        this.tab_temoin = response.data.acf.temoignages;
-        
-        
+        this.temoins = response.data.acf.temoignages;
       });
   },
 };

@@ -7,6 +7,9 @@ a {
 .--login {
   background-color: $bleuFonce;
   border-bottom: 2px solid $bleuFonce !important;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
   a {
     color: $blanc !important;
   }
@@ -72,34 +75,32 @@ span.nav__icon__line {
 
   //navigation menu déroulant
 
-  .nav__hover{
+  .nav__hover {
     background-color: $blanc;
     display: none;
     list-style: none;
     position: absolute;
     top: 4em;
     padding-left: 0px;
-  
   }
-  .--profil{
+  .--profil {
     position: relative;
-    border-bottom: none!important;
+    border-bottom: none !important;
   }
-  .--profil:hover .nav__hover{
+  .--profil:hover .nav__hover {
     display: block;
   }
 
-  .nav__hover li{
+  .nav__hover li {
     text-align: left;
     width: max-content;
   }
 
-  .nav__hover li a{
-    padding-left: 20px!important;
-
+  .nav__hover li a {
+    padding-left: 20px !important;
   }
 
-  // 
+  //
 
   .nav__icon {
     position: relative;
@@ -254,6 +255,56 @@ span.nav__icon__line {
     #--login {
       background-color: $bleuFonce;
       color: $blanc !important;
+    }
+  }
+}
+
+li.nav__list.--profil {
+  width: 12rem;
+  background-color: $bleuFonce;
+  justify-content: center;
+  border-bottom: 2px solid $bleuFonce;
+  &:hover {
+    .nav__hover {
+      background-color: $blanc;
+      height: 7rem;
+      justify-content: space-evenly;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      border-top: 1px solid $bleuFonce;
+      li:first-child {
+        a {
+          margin: 0 !important;
+          padding: 1rem 0 !important;
+          color: $noir !important;
+        }
+      }
+      .nav__line {
+        height: 2px;
+        width: 100%;
+        background-color: $noir;
+      }
+      li:last-child {
+        button {
+          background: none;
+          color: $noir !important;
+
+          border: none;
+        }
+      }
+    }
+  }
+  a {
+    color: $blanc !important;
+  }
+}
+
+ul.nav__hover {
+  li {
+    a {
+      color: $noir !important;
     }
   }
 }

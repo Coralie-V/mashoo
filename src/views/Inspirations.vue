@@ -154,81 +154,18 @@
           </div>
         </div>
         <div class="col-md-8 inspirations__block">
-          <div class="inspirations__item">
+          <div
+            v-for="inspiration in inspirations"
+            :key="inspiration.url"
+            class="inspirations__item"
+          >
             <img
               class="inspirations__img"
-              src="@/assets/images/header-basket.png"
+              :src="inspiration.acf.image_URL"
               alt="image chaussure"
             />
             <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
-            </div>
-          </div>
-          <div class="inspirations__item">
-            <img
-              class="inspirations__img"
-              src="@/assets/images/header-basket.png"
-              alt="image chaussure"
-            />
-            <div>
-              <p>13/12/2021</p>
-              <p>Par Anonyme</p>
+              <p>auteur : {{ inspiration.title.rendered }}</p>
             </div>
           </div>
         </div>
@@ -242,3 +179,25 @@
     </div>
   </section>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      inspirations: null,
+    };
+  },
+  name: "Inspiration",
+
+  mounted() {
+    axios
+      .get("https://mashoo.paulakar.fr/wp-json/wp/v2/shoes")
+      .then((response) => {
+        // Liste des chaussures
+        this.inspirations = response.data;
+      });
+  },
+};
+</script>

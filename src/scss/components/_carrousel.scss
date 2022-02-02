@@ -22,7 +22,6 @@ $nb-slides: 5;
   @extend .flex;
   position: relative;
   max-width: 600px;
-  margin: 50px;
 
   input {
     display: none;
@@ -33,13 +32,12 @@ $nb-slides: 5;
   @extend .line;
   overflow: hidden;
   border-radius: 15px;
-
+  height: 30vh;
   ul {
     @extend .center;
     position: relative;
     list-style: none;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
     height: 100%;
@@ -53,7 +51,6 @@ $nb-slides: 5;
 
     img {
       @extend .line;
-      
     }
   }
 }

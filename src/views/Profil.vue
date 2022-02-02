@@ -8,13 +8,16 @@
 
     <h2>MES PRÉCOMMANDES</h2>
 
-    <div v-if="shoes.length">
+    <div class="list_precommande" v-if="shoes.length">
       <div class="precommande" v-for="shoe in shoes" :key="shoe.id">
         <div class="precommande_info">
           <img :src="shoe.acf.image_URL" alt="" />
-
+          <p>Taille : {{ shoe.acf.taille_chaussure }}</p>
           <p>{{ shoe.title.rendered }}</p>
-          <p>Date de commande : 13/12/2021</p>
+          <p>Commandé le {{ shoe.date | formatDate }}</p>
+          <button class="btn_delete" v-on:click="deleteShoe(shoe.id)">
+            Supprimer
+          </button>
         </div>
       </div>
     </div>
@@ -22,7 +25,17 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
+import VueAxios from "vue-axios";
+import moment from "moment";
+
+Vue.filter("formatDate", function (value) {
+  if (value) {
+    return moment(String(value)).format(" MM/DD/YYYY à hh:mm");
+  }
+});
+Vue.use(VueAxios, axios);
 
 export default {
   data() {
@@ -30,14 +43,40 @@ export default {
       shoes: [],
     };
   },
+
+  methods: {
+    getData() {
+      this.axios
+        .get("https://mashoo.paulakar.fr/wp-json/wp/v2/shoes")
+        .then((result) => {
+          console.warn(result);
+          this.shoes = result.data;
+        });
+    },
+    deleteShoe(id) {
+      this.axios
+        .delete("https://mashoo.paulakar.fr/wp-json/wp/v2/shoes/" + id, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${this.$store.state.user.authToken}`,
+          },
+        })
+
+        .then(() => {
+          this.getData();
+        });
+    },
+  },
   created() {
     axios
-      .get(`https://mashoo.paulakar.fr/wp-json/wp/v2/shoes?author=${this.$store.state.user.id}`)
-      .then(response => {
-        console.log('profil : ',response.data)
-        this.shoes = response.data
+      .get(
+        `https://mashoo.paulakar.fr/wp-json/wp/v2/shoes?author=${this.$store.state.user.id}`
+      )
+      .then((response) => {
+        console.log("profil : ", response.data);
+        this.shoes = response.data;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   },

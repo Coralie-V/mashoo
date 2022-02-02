@@ -1,29 +1,36 @@
-h2{
-    margin-top:40px;
+h2 {
+  margin-top: 40px;
 }
 
-.precommande{
-    display:flex;
+.list_precommande {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  .precommande {
+    display: flex;
     flex-direction: row;
     background-color: $grisclair;
-    margin-top:3%;
+    margin-top: 3%;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    margin-bottom:5%;
-}
+    margin-bottom: 5%;
+    margin: 1%;
+    width: 40%;
 
-.precommande_info{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin:auto;
-}
-
-
-@media (max-width: 768px) {
-    .precommande{
-        
-        flex-direction: column;
-        
-        
+    .precommande_info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: auto;
+      img {
+        width: 100%;
+      }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .precommandes {
+    flex-direction: column;
+  }
+}

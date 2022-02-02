@@ -2,6 +2,14 @@
 //Pour mettre un bouton avec une border en dégradé :
 // <button class="input-nav"><span>Texte</span></button>
 
+#taille_chaussure {
+  div {
+    button:focus {
+      color: violet;
+    }
+  }
+}
+
 .button__form {
   font-size: $fontSizeNav;
   font-weight: bold;
@@ -69,4 +77,23 @@
 .-centrer {
   margin: 3em auto 1em !important;
   display: block;
+}
+
+.btn_delete {
+  padding: 10px 25px;
+  margin: 0px 20px;
+  position: relative;
+  border: 0px solid transparent;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: $blanc;
+  font-family: $fontFamilyText;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+.btn_delete:hover {
+  background-color: rgb(172, 69, 0);
+  transition: 0.3s;
 }

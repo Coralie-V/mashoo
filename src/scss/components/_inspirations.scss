@@ -143,18 +143,17 @@
     align-items: center;
     width: 17.59vw;
     img {
-      width: 12vw;
-      margin-bottom: 3rem;
+      width: 27vw;
+      margin-bottom: 1rem;
     }
     border: solid 2px lightgray;
     margin: 1em;
     padding: 1rem 0;
     background-color: lightgray;
   }
-  &.--modele{
+  &.--modele {
     width: auto;
     justify-content: center;
-
   }
 }
 

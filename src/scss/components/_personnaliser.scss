@@ -124,12 +124,16 @@ path.cls-3 {
 
 #liens {
   margin: 5rem auto 0rem;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   a {
     margin: 0px 20px;
   }
   button {
     @include btn;
+    display: block;
+    margin: 0 auto;
   }
   button::after {
     @include btnAfter;
