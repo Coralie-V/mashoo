@@ -540,7 +540,7 @@
         </div>
       </div>
       <button class="button__form" id="header__btn">
-        > Voir tous mes modèles
+         <router-link class="button__perso" to="/modeles">Voir tous mes modèles</router-link>
       </button>
     </div>
   </section>

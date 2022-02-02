@@ -97,3 +97,10 @@
   background-color: rgb(172, 69, 0);
   transition: 0.3s;
 }
+
+.button__perso{
+  color: $noir;
+}
+.button__form:hover .button__perso{
+  color: $blanc;
+}
