@@ -1,6 +1,6 @@
 @mixin btn {
   padding: 10px 25px;
-  margin: 0px 20px;
+  margin: 10px 20px;
   position: relative;
   border: 0px solid transparent;
   border-radius: 50px;
@@ -8,7 +8,7 @@
   background-color: $blanc;
   font-family: $fontFamilyText;
 
-  &:hover{
+  &:hover {
     background: $degradeVioletBleu;
     color: $blanc;
   }

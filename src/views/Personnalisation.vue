@@ -297,6 +297,7 @@
             <button
               class="border-gradient border-gradient-purple"
               id="taille_une_chaussure"
+              v-on:click="btn_taille_chaussure()"
             >
               {{ tailleChaussure }}
             </button>
@@ -362,7 +363,12 @@
           >voir ma paire</router-link
         >
       </button>
-      <button @click="saveShoeHandler()">Précommander</button>
+      <router-link to="/Connexion" v-if="!isUserLogged"
+        >CONNECTEZ-VOUS POUR PRÉCOMMANDER
+      </router-link>
+      <button @click="saveShoeHandler()" v-if="isUserLogged">
+        Précommander
+      </button>
     </div>
     <div class="row justify-content-center description">
       <div class="col-md-3">
@@ -551,6 +557,14 @@ import domtoimage from "dom-to-image-more";
 import Caroussel from "../components/CarrouselInspirations.vue";
 
 export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    isUserLogged() {
+      return this.$store.state.user.authToken ? true : false;
+    },
+  },
   data() {
     return {
       taillesChaussure: null,
@@ -564,6 +578,7 @@ export default {
     Caroussel: Caroussel,
   },
   methods: {
+    btn_taille_chaussure() {},
     saveShoeHandler() {
       this.getScreenShot(this.sendImageToWPMediaLibrary);
     },

@@ -155,7 +155,7 @@
         </div>
         <div class="col-md-8 inspirations__block">
           <div
-            v-for="inspiration in inspirations"
+            v-for="inspiration in inspirations.slice(0, 9)"
             :key="inspiration.url"
             class="inspirations__item"
           >

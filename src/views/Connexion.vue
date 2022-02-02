@@ -7,9 +7,13 @@
       <div class="trait_titre_h1"></div>
     </div>
     <form @submit="submit">
-      <p v-if="isUserLogged">
-        Bonjour <span style="color: red">{{ user.displayName }}</span
-        >, votre mail -> <span style="color: red">{{ user.email }}</span>
+      <p
+        v-if="isUserLogged"
+        style="text-align: center; font-size: 1.3em; margin-top: 1rem"
+      >
+        Bienvenue
+        <span style="color: #3fe13f">{{ user.displayName }}</span>
+        !
       </p>
       <div class="formulaire">
         <label class="formulaire__label" for="username"

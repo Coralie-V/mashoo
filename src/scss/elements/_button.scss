@@ -12,7 +12,7 @@
 
 .button__form {
   font-size: $fontSizeNav;
-  font-weight: bold;
+
   transition: 0.3s;
   @include btn;
 }
@@ -81,7 +81,7 @@
 
 .btn_delete {
   padding: 10px 25px;
-  margin: 0px 20px;
+  margin: 10px 20px;
   position: relative;
   border: 0px solid transparent;
   border-radius: 50px;
@@ -98,9 +98,9 @@
   transition: 0.3s;
 }
 
-.button__perso{
+.button__perso {
   color: $noir;
 }
-.button__form:hover .button__perso{
+.button__form:hover .button__perso {
   color: $blanc;
 }
