@@ -14,7 +14,7 @@
           <img :src="shoe.acf.image_URL" alt="" />
           <p>Taille : {{ shoe.acf.taille_chaussure }}</p>
           <p>{{ shoe.title.rendered }}</p>
-          <p>Commandé le {{ shoe.date | formatDate }}</p>
+          <p>Précommandé le {{ shoe.date | formatDate }}</p>
           <button class="btn_delete" v-on:click="deleteShoe(shoe.id)">
             Supprimer
           </button>
