@@ -16,13 +16,10 @@
             v-bind:src="background.acf.logo"
             alt="image chaussure"
           />
-          <button
-            onclick="window.location.href='http://localhost:8080/Personnalisation'"
-            class="button__form"
-            id="header__btn"
+
+          <router-link to="/personnalisation" class="button__form"
+            >Personnaliser</router-link
           >
-            Personnaliser
-          </button>
         </div>
       </div>
     </header>

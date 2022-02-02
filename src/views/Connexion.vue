@@ -52,8 +52,8 @@
         </div>
         <div class="formulaire__liens">
           <a href="#">Mot de passe oublié ?</a>
-          <a href="inscription"
-            >Vous n'êtes pas encore inscrit ? Inscrivez-vous !</a
+          <router-link to="/inscription"
+            >Vous n'êtes pas encore inscrit ? Inscrivez-vous !</router-link
           >
         </div>
       </div>
@@ -62,9 +62,7 @@
       </button>
     </form>
     <div v-if="success">
-      <p style="color: green; text-align: center">
-        Votre inscription est réussi !
-      </p>
+      <p style="color: green; text-align: center">Vous êtes connecté</p>
     </div>
 
     <div v-if="error">
@@ -73,7 +71,7 @@
     <button class="-orange -centrer">
       <span
         ><img src="@/assets/images/logos_google-icon.png" />
-        <p>Connexion avec Google</p></span
+        <p style="margin: 0px">Connexion avec Google</p></span
       >
     </button>
   </section>

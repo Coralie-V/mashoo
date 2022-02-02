@@ -58,7 +58,9 @@
     </form>
 
     <div v-if="success">
-      <p style="color: green">Votre inscription est réussi !</p>
+      <p style="color: green; text-align: center">
+        Votre inscription est réussi !
+      </p>
     </div>
 
     <div v-if="error">

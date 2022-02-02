@@ -12,9 +12,17 @@
 
 .button__form {
   font-size: $fontSizeNav;
-
   transition: 0.3s;
   @include btn;
+  padding: 10px 25px;
+  margin: 10px auto;
+  position: relative;
+  border: 0px solid transparent;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: white;
+  font-family: "Outfit", sans-serif;
+  display: table;
 }
 
 .linkInpiration {
@@ -50,6 +58,7 @@
   @include btnOrange;
   span {
     display: flex;
+    align-items: center;
     img {
       margin-right: 1em;
     }

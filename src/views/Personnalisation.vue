@@ -297,7 +297,6 @@
             <button
               class="border-gradient border-gradient-purple"
               id="taille_une_chaussure"
-              v-on:click="btn_taille_chaussure()"
             >
               {{ tailleChaussure }}
             </button>
@@ -578,7 +577,6 @@ export default {
     Caroussel: Caroussel,
   },
   methods: {
-    btn_taille_chaussure() {},
     saveShoeHandler() {
       this.getScreenShot(this.sendImageToWPMediaLibrary);
     },

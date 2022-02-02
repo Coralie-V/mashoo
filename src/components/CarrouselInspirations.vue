@@ -34,13 +34,10 @@
         </div>
       </div>
     </div>
-    <button
-      onclick="window.location.href='inspirations'"
-      class="button__form"
-      id="header__btn"
+
+    <router-link to="/inspirations" class="button__form">
+      Voir plus d'inspirations</router-link
     >
-      Voir plus d'inspirations
-    </button>
   </div>
 </template>
 <script>

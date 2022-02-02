@@ -12,7 +12,6 @@
       <div class="precommande" v-for="shoe in shoes" :key="shoe.id">
         <div class="precommande_info">
           <img :src="shoe.acf.image_URL" alt="" />
-          <p>Taille : {{ shoe.acf.taille_chaussure }}</p>
           <p>{{ shoe.title.rendered }}</p>
           <p>Précommandé le {{ shoe.date | formatDate }}</p>
           <button class="btn_delete" v-on:click="deleteShoe(shoe.id)">
